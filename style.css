@@ -43,6 +43,10 @@ button {
     font-size: 2em;
 }
 
+.winner, .tie {
+    font-size: 2em;
+}
+
 .humanScore, .computerScore {
     text-align: center;
 }
