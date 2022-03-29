@@ -1,6 +1,7 @@
 let playerScore = 0;
 let computerScore = 0;
-const buttons = document.querySelectorAll("button")
+const buttons = document.querySelectorAll(".button")
+const playAgain = document.querySelector(".playAgain")
 const rockButton = document.getElementById("rockButton");
 const paperButton = document.getElementById("paperButton");
 const scissorsButton = document.getElementById("scissorsButton");
@@ -65,8 +66,12 @@ function playRound(playerSelection) {
             }
         }  
 
+playAgain.addEventListener("click", function(){
+    location.reload();
+})
+
 buttons.forEach(button =>{
-    button.addEventListener('click', function(){
+    button.addEventListener("click", function(){
          playRound(button.value.toUpperCase());
     })
 })
