@@ -5,7 +5,7 @@ const playAgain = document.querySelector(".playAgain")
 const rockButton = document.getElementById("rockButton");
 const paperButton = document.getElementById("paperButton");
 const scissorsButton = document.getElementById("scissorsButton");
-const tieScore = document.querySelector(".tie")
+const winner = document.querySelector(".winner");
 
 function computerPlay() {
     const rockPaperScissors = ["ROCK", "PAPER", "SCISSORS"];
@@ -13,31 +13,32 @@ function computerPlay() {
 }
 
 function tie() {
-    tieScore.textContent = "Tie."
+    winner.textContent = "Tie."
 } 
 
 function updateHumanScore() {
     playerScore++;
     const humanScore = document.querySelector(".humanScore");
     humanScore.textContent = playerScore;
-    tieScore.textContent = ""
+    winner.textContent = ""
 }
 
 function updatecomputerScore() {
     computerScore++;
     const cpuScore = document.querySelector(".computerScore");
     cpuScore.textContent = computerScore;
-    tieScore.textContent = ""
+    winner.textContent = ""
 }
 
 function endGame() {
-    const winner = document.querySelector(".winner");
+    
     if (playerScore == 5) { 
         winner.textContent = "You won.";
         rockButton.disabled = true;
         paperButton.disabled = true;
         scissorsButton.disabled = true;
-    } else if (computerScore == 5) {
+    } 
+    if (computerScore == 5) {
         winner.textContent = "You lost."
         rockButton.disabled = true;
         paperButton.disabled = true;
