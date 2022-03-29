@@ -1,25 +1,32 @@
 let playerScore = 0;
 let computerScore = 0;
-const buttons = document.querySelectorAll("input")
+const buttons = document.querySelectorAll("button")
 const rockButton = document.getElementById("rockButton");
 const paperButton = document.getElementById("paperButton");
 const scissorsButton = document.getElementById("scissorsButton");
+const tieScore = document.querySelector(".tie")
 
 function computerPlay() {
     const rockPaperScissors = ["ROCK", "PAPER", "SCISSORS"];
     return rockPaperScissors[Math.floor(Math.random() * rockPaperScissors.length)];
 }
 
+function tie() {
+    tieScore.textContent = "Tie."
+} 
+
 function updateHumanScore() {
     playerScore++;
     const humanScore = document.querySelector(".humanScore");
     humanScore.textContent = playerScore;
+    tieScore.textContent = ""
 }
 
 function updatecomputerScore() {
     computerScore++;
     const cpuScore = document.querySelector(".computerScore");
     cpuScore.textContent = computerScore;
+    tieScore.textContent = ""
 }
 
 function endGame() {
@@ -43,9 +50,8 @@ it checks the user input against the computer selection and return whether it's 
 updates the scores accordingly */
 function playRound(playerSelection) {
     computerSelection = computerPlay();
-    
     if (playerSelection == computerSelection) {
-        console.log("It's a draw") ; 
+        tie();
         } else if ((playerSelection == "ROCK" && computerSelection == "PAPER") ||
                   (playerSelection == "SCISSORS" && computerSelection == "ROCK") ||
                   (playerSelection == "PAPER" && computerSelection == "SCISSORS")) {

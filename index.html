@@ -6,17 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock, Paper, Scissors</title>
     <script src="javascript.js" defer></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <input id="rockButton" type="button" value="Rock" type="button"></input>
-    <input id="paperButton" class="button" type="button" value="Paper" type="button"></input>
-    <input id="scissorsButton" class="button" type="button" value="Scissors" type="button"></input>
-    <div class="score">The score is 
-        <div class="human">Human :
-            <div class="humanScore"></div>
+    <div class="tie"></div>
+    <div class="buttons">
+    <button id="rockButton" type="button" value="Rock">ROCK</button>
+    <button id="paperButton" type="button" value="Paper">PAPER</button>
+    <button id="scissorsButton" type="button" value="Scissors">SCISSORS</button>
+    </div>
+    <div class="scores">
+        <div class="human">Your score :
+            <div class="humanScore">0</div>
         </div>
-        <div class="computer">Computer :
-            <div class="computerScore"></div>
+        <div class="computer">Computer score :
+            <div class="computerScore">0</div>
         </div>
     </div>
     <div class="winner"></div>
