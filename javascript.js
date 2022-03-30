@@ -6,6 +6,8 @@ const rockButton = document.getElementById("rockButton");
 const paperButton = document.getElementById("paperButton");
 const scissorsButton = document.getElementById("scissorsButton");
 const winner = document.querySelector(".winner");
+const choices = document.querySelector(".choices");
+const roundWinner = document.querySelector(".roundWinner");
 
 function computerPlay() {
     const rockPaperScissors = ["ROCK", "PAPER", "SCISSORS"];
@@ -13,21 +15,25 @@ function computerPlay() {
 }
 
 function tie() {
-    winner.textContent = "Tie."
+    roundWinner.textContent = "It's a tie.";
 } 
+
+function showChoices(playerChoice, computerChoice) {
+    choices.textContent = `You chose ${playerChoice}, the computer chose ${computerChoice}`;
+}
 
 function updateHumanScore() {
     playerScore++;
     const humanScore = document.querySelector(".humanScore");
     humanScore.textContent = playerScore;
-    winner.textContent = ""
+    roundWinner.textContent = "You win this round";
 }
 
 function updatecomputerScore() {
     computerScore++;
     const cpuScore = document.querySelector(".computerScore");
     cpuScore.textContent = computerScore;
-    winner.textContent = ""
+    roundWinner.textContent = "The computer wins this round";
 }
 
 function endGame() {
@@ -37,12 +43,14 @@ function endGame() {
         rockButton.disabled = true;
         paperButton.disabled = true;
         scissorsButton.disabled = true;
+        roundWinner.textContent ="";
     } 
     if (computerScore == 5) {
         winner.textContent = "You lost."
         rockButton.disabled = true;
         paperButton.disabled = true;
         scissorsButton.disabled = true;
+        roundWinner.textContent ="";
     }
 }
     
@@ -52,17 +60,21 @@ it checks the user input against the computer selection and return whether it's 
 updates the scores accordingly */
 function playRound(playerSelection) {
     computerSelection = computerPlay();
+    
     if (playerSelection == computerSelection) {
+        showChoices(playerSelection, computerSelection);
         tie();
         } else if ((playerSelection == "ROCK" && computerSelection == "PAPER") ||
                   (playerSelection == "SCISSORS" && computerSelection == "ROCK") ||
                   (playerSelection == "PAPER" && computerSelection == "SCISSORS")) {
-            updatecomputerScore();
+            showChoices(playerSelection, computerSelection);
+            updateHumanScore();
             endGame();
         } else if ((playerSelection == "ROCK" && computerSelection == "SCISSORS") ||
                   (playerSelection == "PAPER" && computerSelection == "ROCK") ||
                   (playerSelection == "SCISSORS" && computerSelection == "PAPER"))  {
-            updateHumanScore();    
+            showChoices(playerSelection, computerSelection);
+            updatecomputerScore();
             endGame();
             }
         }  

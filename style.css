@@ -23,7 +23,7 @@ button {
     display: inline-block;
     height: 250px;
     width: 250px;
-    
+
     font-size: 42px;
     border: none;
     padding: 1rem 2rem;
@@ -43,8 +43,14 @@ button {
     font-size: 2em;
 }
 
-.winner, .tie {
+.winner, .choices {
     font-size: 2em;
+    height: 40px;
+}
+
+.roundWinner {
+    font-size: 1.5em;
+    height: 40px;
 }
 
 .humanScore, .computerScore {
