@@ -29,7 +29,7 @@ function updateHumanScore() {
     roundWinner.textContent = "You win this round";
 }
 
-function updatecomputerScore() {
+function updateComputerScore() {
     computerScore++;
     const cpuScore = document.querySelector(".computerScore");
     cpuScore.textContent = computerScore;
@@ -68,13 +68,13 @@ function playRound(playerSelection) {
                   (playerSelection == "SCISSORS" && computerSelection == "ROCK") ||
                   (playerSelection == "PAPER" && computerSelection == "SCISSORS")) {
             showChoices(playerSelection, computerSelection);
-            updateHumanScore();
+            updateComputerScore();
             endGame();
         } else if ((playerSelection == "ROCK" && computerSelection == "SCISSORS") ||
                   (playerSelection == "PAPER" && computerSelection == "ROCK") ||
                   (playerSelection == "SCISSORS" && computerSelection == "PAPER"))  {
             showChoices(playerSelection, computerSelection);
-            updatecomputerScore();
+            updateHumanScore();
             endGame();
             }
         }  
