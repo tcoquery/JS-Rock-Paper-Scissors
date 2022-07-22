@@ -9,7 +9,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;;
+    min-height: 100vh;
 }
 
 #rockButton, #paperButton, #scissorsButton {
@@ -21,14 +21,10 @@ body {
 
 button {
     display: inline-block;
-    height: 250px;
-    width: 250px;
-
-    font-size: 42px;
+    text-align: center;
+    width: 325px;
+    min-height: 225px;
     border: none;
-    padding: 1rem 2rem;
-    margin: 0;
-    text-decoration: none;
     background: white;
     font-family: airspace, arial, verdana, sans-serif;
     font-size: 3em;
@@ -39,18 +35,21 @@ button {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 450px;
     font-size: 2em;
+}
+
+.human, .computer {
+    margin: 10px;
 }
 
 .winner, .choices {
     font-size: 2em;
-    height: 40px;
+    min-height: 40px;
 }
 
 .roundWinner {
     font-size: 1.5em;
-    height: 40px;
+    min-height: 40px;
 }
 
 .humanScore, .computerScore {
