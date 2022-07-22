@@ -8,4 +8,6 @@ The computer's choices are random.
 
 This project taught me how to use event listeners.
 
+![Rock Paper Scissors screenshot](https://i.imgur.com/a1tQGBE.png)
+
 You can play it here : https://tcoquery.github.io/JS-Rock-Paper-Scissors/
